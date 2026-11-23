@@ -1,0 +1,22 @@
+import { DefaultSession } from "next-auth";
+
+declare module "next-auth" {
+  interface Session {
+    user: {
+      discordId?: string;
+      appRole?: string;
+      nickname?: string | null;
+      appUserId?: string;
+    } & DefaultSession["user"];
+  }
+}
+
+declare module "@auth/core/jwt" {
+  interface JWT {
+    discordId?: string;
+    appRole?: string;
+    nickname?: string | null;
+    appUserId?: string;
+    revalidatedAt?: number;
+  }
+}

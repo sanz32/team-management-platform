@@ -1,0 +1,11 @@
+{
+  "name": "mrt-break-watcher",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vigila el Chat.log de World of Warcraft y avisa al portal cuando MRT anuncia un break.",
+  "main": "watch.js",
+  "scripts": {
+    "start": "node watch.js",
+    "build:exe": "node --experimental-sea-config sea-config.json && node build-copy.js && npx --yes postject mrt-break-watcher.exe NODE_SEA_BLOB sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2"
+  }
+}
